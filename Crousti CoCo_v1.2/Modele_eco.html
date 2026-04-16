@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crousti Coco — Modèle Économique</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="cursor" id="c"></div>
+  <div class="cursor-ring" id="cr"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <span><span class="c1">CROUSTI</span><span class="c2">COCO</span></span>
+      <span class="sub">KF Burger · Île-de-France · Franchise</span>
+    </a>
+    <ul id="nl">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="A_propos.html">Qui sommes-nous ?</a></li>
+      <li><a href="Franchise.html">La franchise</a></li>
+      <li><a href="Modele_eco.html" class="nav-active">Modèle éco.</a></li>
+      <li><a href="Contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="mt"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="sec dark3" style="padding-top:8rem;">
+    <div class="container">
+
+      <!-- ── 1. Grandes métriques 90k / 1,08M / 14,5% ── -->
+      <div class="rv" style="margin-bottom:3rem;">
+        <div style="font-size:1.5rem;margin-bottom:1.25rem;">📊</div>
+        <div class="big-metrics">
+          <div class="big-metric">
+            <div class="bm-val">90k€</div>
+            <div class="bm-label">CA moyen / mois</div>
+            <div class="bm-sub">Par restaurant</div>
+          </div>
+          <div class="big-metric">
+            <div class="bm-val">1,08M€</div>
+            <div class="bm-label">CA annuel</div>
+            <div class="bm-sub">Par restaurant</div>
+          </div>
+          <div class="big-metric">
+            <div class="bm-val">14,5%</div>
+            <div class="bm-label">Résultat net</div>
+            <div class="bm-sub">Marge nette estimée</div>
+          </div>
+        </div>
+        <div class="funding-boxes" style="margin-top:1rem;">
+          <div class="fb"><h4>Apport</h4><div class="fval">150k€</div></div>
+          <div class="fb"><h4>Besoin total projet</h4><div class="fval">200k€</div></div>
+          <div class="fb"><h4>Recherche</h4><div class="fval">50k€</div></div>
+        </div>
+      </div>
+
+      <!-- ── 2. CA mensuel + formule ── -->
+      <div class="rv" style="margin-bottom:2rem;">
+        <div style="font-size:1.4rem;margin-bottom:1rem;">💰</div>
+        <div class="ca-row">
+          <div class="ca-box">
+            <h4>CA mensuel</h4>
+            <div class="ca-num">90k€</div>
+          </div>
+          <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:rgba(255,255,255,.3);">1,08M€</div>
+        </div>
+        <p style="font-size:.83rem;color:var(--text);line-height:1.75;margin-top:1rem;padding:1rem;background:var(--ink3);border-radius:10px;">
+          Ces hypothèses sont basées sur les performances observées dans les restaurants KF Burger déjà en activité en Belgique et en France. CA journalier : 3 000€/jour · Jours d'exploitation : 360 jours/an · CA annuel : 1 080 000€/an par restaurant.
+        </p>
+      </div>
+
+      <!-- ── 3. 17,5% résultat net ── -->
+      <div class="rv" style="margin-bottom:2rem;">
+        <div style="font-size:1.5rem;margin-bottom:.75rem;">📊</div>
+        <div class="resultat-split">
+          <div>
+            <div class="resultat-big">17,5%</div>
+            <div class="resultat-label">Résultat net</div>
+            <div class="resultat-sub">Marge nette par restaurant (2027)</div>
+          </div>
+          <div class="resultat-right">
+            <div class="badge-item">
+              <span class="bi-emoji">➡️</span>
+              <p>Résultat annuel :</p>
+            </div>
+            <div class="badge-item">
+              <span class="bi-emoji">👉</span>
+              <p><strong>~189 000€ par restaurant</strong></p>
+            </div>
+            <div class="badge-item">
+              <span class="bi-emoji"></span>
+              <p>CA : 3 000€/jour × 360 jours = 1 080 000€/an</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 4. Grilles 2026 / 2027 ── -->
+      <div class="year-grids rv">
+        <div class="year-grid-card">
+          <div class="yg-emoji">📈</div>
+          <div style="margin-bottom:1rem;">
+            <div style="font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text2);margin-bottom:.25rem;">Année 2026</div>
+          </div>
+          <div class="yg-items">
+            <div class="yg-item">
+              <h5>Nombre de restaurants</h5>
+              <p>4 restaurants</p>
+            </div>
+            <div class="yg-item">
+              <h5>Chiffre d'affaires</h5>
+              <p><span class="arrow">➡️</span> CA groupe 2026 : 4,32M€</p>
+            </div>
+            <div class="yg-item">
+              <h5>Résultat net</h5>
+              <p><span class="arrow">➡️</span> 0,425M€</p>
+            </div>
+            <div class="yg-item">
+              <h5>EBITDA</h5>
+              <p><span class="arrow">➡️</span> 1,325M€</p>
+            </div>
+            <div class="yg-item">
+              <h5>Marge nette</h5>
+              <p><span class="arrow">➡️</span> 9,8%</p>
+            </div>
+            <div class="yg-item">
+              <h5>DSCR</h5>
+              <p><span class="arrow">➡️</span> 1,5x</p>
+            </div>
+          </div>
+        </div>
+        <div class="year-grid-card">
+          <div class="yg-emoji">📈</div>
+          <div style="margin-bottom:1rem;">
+            <div style="font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text2);margin-bottom:.25rem;">Année 2027</div>
+          </div>
+          <div class="yg-items">
+            <div class="yg-item">
+              <h5>Nombre de restaurants</h5>
+              <p>9 restaurants</p>
+            </div>
+            <div class="yg-item">
+              <h5>Chiffre d'affaires</h5>
+              <p><span class="arrow">➡️</span> CA groupe 2027 : 9,72M€</p>
+            </div>
+            <div class="yg-item">
+              <h5>EBITDA</h5>
+              <p><span class="arrow">➡️</span> 2,981M€</p>
+            </div>
+            <div class="yg-item">
+              <h5>Résultat net</h5>
+              <p><span class="arrow">➡️</span> 1,701M€</p>
+            </div>
+            <div class="yg-item">
+              <h5>Marge nette</h5>
+              <p><span class="arrow">➡️</span> 17,5%</p>
+            </div>
+            <div class="yg-item">
+              <h5>DSCR</h5>
+              <p><span class="arrow">➡️</span> 2,8x</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 5. Tableau P&L complet ── -->
+      <div class="pl-table-wrap rv" style="margin:2.5rem 0;">
+        <table>
+          <thead>
+            <tr>
+              <th>Poste</th>
+              <th>2026</th>
+              <th>2027</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Chiffre d'affaires</td><td>4,32M€</td><td>9,72M€</td></tr>
+            <tr><td>Coût des matières premières (33% du CA)</td><td>1,426M€</td><td>3,208M€</td></tr>
+            <tr><td>Masse salariale (22% du CA)</td><td>0,950M€</td><td>2,138M€</td></tr>
+            <tr><td>Loyers (3 000€/mois/resto)</td><td>0,144M€</td><td>0,324M€</td></tr>
+            <tr><td>Redevances franchise (5%)</td><td>0,216M€</td><td>0,486M€</td></tr>
+            <tr><td>Autres charges opérationnelles (6%)</td><td>0,259M€</td><td>0,583M€</td></tr>
+            <tr class="row-bold"><td>EBITDA</td><td>1,325M€</td><td>2,981M€</td></tr>
+            <tr><td>Amortissements</td><td>0,60M€</td><td>0,90M€</td></tr>
+            <tr class="row-bold"><td>Résultat d'exploitation (EBIT)</td><td>0,725M€</td><td>2,081M€</td></tr>
+            <tr><td>Charges financières</td><td>0,30M€</td><td>0,38M€</td></tr>
+            <tr class="row-teal"><td>Résultat net</td><td>0,425M€</td><td>1,701M€</td></tr>
+            <tr class="row-bold"><td>Marge nette (%)</td><td>9,8%</td><td>17,5%</td></tr>
+            <tr><td>DSCR</td><td>1,5x</td><td>2,8x</td></tr>
+            <tr><td>Payback</td><td>&lt; 2 ans</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <div class="table-note">
+          Hypothèses clés : CA = 3 000€/jour × 360 jours = 1 080 000€/an par restaurant (90 000€/mois). Autres charges opérationnelles = 6% du CA.
+        </div>
+      </div>
+
+      <!-- ── 6. Profil investisseur ── -->
+      <div class="investor-wrap rv">
+        <div class="investor-card">
+          <div style="font-size:1.5rem;margin-bottom:1rem;">🧑‍💼</div>
+          <div>
+            <h4>Objectif</h4>
+            <p>1 à 2 investisseurs</p>
+          </div>
+          <div>
+            <h4>Ticket</h4>
+            <p>25k€ à 50k€</p>
+          </div>
+          <div>
+            <h4>Proposition</h4>
+            <p>Participation minoritaire</p>
+          </div>
+        </div>
+        <div>
+          <ul class="investor-pros">
+            <li>Équipe expérimentée et reconnue</li>
+            <li>Franchise en forte croissance</li>
+            <li>Rentabilité élevée dès le départ</li>
+            <li>ROI estimé en moins de 2 ans</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ── 7. ROI + 250k/200k/50k ── -->
+      <div class="rv" style="margin-bottom:2rem;">
+        <div style="font-size:1.5rem;margin-bottom:.75rem;">⏱️</div>
+        <div class="roi-banner">
+          <span>👉 ROI estimé :</span>
+          <div class="roi-big">➡️ moins de 2 ans</div>
+          <div class="notion-check-inline" style="display:flex;align-items:center;gap:.5rem;background:var(--ink4);border:1px solid var(--border2);border-radius:8px;padding:.6rem 1rem;font-size:.88rem;font-weight:700;">
+            💡 Très attractif pour investisseurs
+          </div>
+        </div>
+
+        <div style="font-size:1.5rem;margin-top:2rem;margin-bottom:.75rem;">💸</div>
+        <div class="big-metrics" style="margin-bottom:1rem;">
+          <div class="big-metric">
+            <div class="bm-val">250k€</div>
+            <div class="bm-label">Coût total</div>
+            <div class="bm-sub">Investissement global du projet initial</div>
+          </div>
+          <div class="big-metric">
+            <div class="bm-val">200k€</div>
+            <div class="bm-label">Apport</div>
+            <div class="bm-sub">Fonds propres des associés</div>
+          </div>
+          <div class="big-metric">
+            <div class="bm-val">50k€</div>
+            <div class="bm-label">Recherche</div>
+            <div class="bm-sub">Montant recherché auprès d'investisseurs</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 8. Affectation des fonds ── -->
+      <div class="rv" style="margin-bottom:3rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+        <div>
+          <div style="font-size:1.4rem;margin-bottom:1.25rem;">🔧</div>
+          <div style="display:flex;flex-direction:column;gap:1.5rem;">
+            <div>
+              <div style="font-size:1.3rem;margin-bottom:.4rem;">🔨</div>
+              <h4 style="font-size:.95rem;font-weight:700;margin-bottom:.2rem;">Travaux / Aménagement</h4>
+              <p style="font-size:.82rem;color:var(--text);">Rénovation et aménagement des locaux</p>
+            </div>
+            <div>
+              <div style="font-size:1.3rem;margin-bottom:.4rem;">🍳</div>
+              <h4 style="font-size:.95rem;font-weight:700;margin-bottom:.2rem;">Équipement cuisine</h4>
+              <p style="font-size:.82rem;color:var(--text);">Matériel professionnel de restauration rapide</p>
+            </div>
+            <div>
+              <div style="font-size:1.3rem;margin-bottom:.4rem;">🏢</div>
+              <h4 style="font-size:.95rem;font-weight:700;margin-bottom:.2rem;">Droit d'entrée franchise</h4>
+              <p style="font-size:.82rem;color:var(--text);">Accès au réseau KF Burger</p>
+            </div>
+            <div>
+              <div style="font-size:1.3rem;margin-bottom:.4rem;">💼</div>
+              <h4 style="font-size:.95rem;font-weight:700;margin-bottom:.2rem;">Fonds de roulement</h4>
+              <p style="font-size:.82rem;color:var(--text);">Trésorerie de démarrage et premiers mois d'exploitation</p>
+            </div>
+          </div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Travaux restaurant" style="width:100%;height:380px;object-fit:cover;border-radius:16px;">
+      </div>
+
+      <!-- ── 9. Sources de financement ── -->
+      <div class="rv" style="margin-bottom:3rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+        <div>
+          <div style="font-size:1.4rem;margin-bottom:1rem;">🌐</div>
+          <p class="bullet-orange" style="margin-bottom:1.5rem;">👉 Déploiement financé par :</p>
+          <div class="fin-sources">
+            <div class="fin-source">
+              <div class="fin-source-num">1</div>
+              <div class="fin-source-text">
+                <h4>💵 Cash-flow généré</h4>
+                <p>Réinvestissement des bénéfices des premiers restaurants</p>
+              </div>
+            </div>
+            <div class="fin-source">
+              <div class="fin-source-num">2</div>
+              <div class="fin-source-text">
+                <h4>🤝 Apport des associés</h4>
+                <p>Capital propre des 3 fondateurs</p>
+              </div>
+            </div>
+            <div class="fin-source">
+              <div class="fin-source-num">3</div>
+              <div class="fin-source-text">
+                <h4>📊 Investisseurs minoritaires</h4>
+                <p>Tickets de 25k€ à 50k€</p>
+              </div>
+            </div>
+          </div>
+          <div class="notion-check" style="margin-top:1.5rem;">
+            <p>Un modèle de financement progressif et maîtrisé, sans dépendance excessive à l'endettement.</p>
+          </div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?w=600&q=80" alt="Finance" style="width:100%;height:340px;object-fit:cover;border-radius:16px;">
+      </div>
+
+      <!-- ── 10. Scénarios de sortie ── -->
+      <div class="rv" style="margin-bottom:3rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
+        <div>
+          <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80" alt="Partenariat" style="width:100%;height:280px;object-fit:cover;border-radius:16px;margin-bottom:1rem;">
+        </div>
+        <div>
+          <div style="font-size:1.5rem;margin-bottom:1.25rem;">🔄</div>
+          <div class="sorties-grid">
+            <div class="sortie-card">
+              <div class="sortie-icon">💰</div>
+              <div>
+                <h4>Dividendes élevés</h4>
+                <p>Retour sur investissement via des dividendes généreux issus de la forte rentabilité du réseau</p>
+              </div>
+            </div>
+            <div class="sortie-card">
+              <div class="sortie-icon">🔁</div>
+              <div>
+                <h4>Rachat de parts</h4>
+                <p>Possibilité de rachat des parts par les associés fondateurs après 2 ans</p>
+              </div>
+            </div>
+            <div class="sortie-card">
+              <div class="sortie-icon">🏛️</div>
+              <div>
+                <h4>Cession</h4>
+                <p>Option de cession à un tiers ou à un fonds d'investissement lors d'une levée de fonds future</p>
+              </div>
+            </div>
+          </div>
+          <div class="notion-check" style="margin-top:1rem;">
+            <p>Un investissement liquide, avec plusieurs scénarios de sortie clairs et documentés.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 11. Résumé exécutif final ── -->
+      <div class="rv" style="padding:2.5rem;background:var(--ink2);border:1px solid var(--border);border-radius:20px;margin-bottom:2rem;display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;">
+        <div>
+          <div class="card" style="margin-bottom:1rem;">
+            <h4 style="font-size:.82rem;font-weight:700;margin-bottom:.6rem;">Développement KF Burger en Île-de-France</h4>
+            <p style="font-size:.78rem;color:var(--text);line-height:1.6;">Déploiement de 9 restaurants en 24 mois<br>Rentabilité : 17,5% net (2027)<br>ROI : &lt; 2 ans</p>
+          </div>
+          <div class="card" style="margin-bottom:1rem;">
+            <h4 style="font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.6rem;">Une équipe experte</h4>
+            <p style="font-size:.78rem;color:var(--text);line-height:1.6;">3 associés issus de McDonald's et KFC avec une forte expérience en gestion multi-sites, ouverture et supervision régionale.</p>
+          </div>
+          <div class="card">
+            <h4 style="font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.6rem;">Une franchise en forte croissance</h4>
+            <p style="font-size:.78rem;color:var(--text);line-height:1.6;">KF Burger : 18 restaurants en Belgique, 3 en France. Objectif : +50 restaurants en France sur 5 ans.</p>
+          </div>
+          <div style="margin-top:1.25rem;font-size:.82rem;color:var(--text);line-height:1.6;">
+            <strong style="color:#fff;">Contact :</strong> Said CHOUDJAY<br>
+            <strong style="color:#fff;">Téléphone :</strong> +33 7 54 87 37 44<br>
+            <strong style="color:#fff;">Email :</strong> said.choudjay@crousticoco.com
+          </div>
+        </div>
+        <div>
+          <div class="notion-check" style="margin-bottom:1.25rem;">
+            <p><strong>Stratégie de déploiement</strong><br>2026 : 4 restaurants<br>2027 : +5 restaurants</p>
+          </div>
+          <div style="background:var(--ink4);border:1px solid var(--border2);border-radius:14px;padding:1.5rem;">
+            <p style="font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text2);margin-bottom:1rem;">Modèle économique</p>
+            <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.83rem;">
+              <div style="display:flex;justify-content:space-between;"><span style="color:var(--text)">CA journalier / restaurant</span><span style="font-weight:600;">3 000€/jour</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:var(--text)">CA mensuel / restaurant</span><span style="font-weight:600;">90 000€</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:var(--text)">CA annuel / restaurant</span><span style="font-weight:600;">1,08M€</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:var(--text)">CA groupe 2026 (4 restos)</span><span style="font-weight:600;">4,32M€</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:var(--text)">CA groupe 2027 (9 restos)</span><span style="font-weight:600;">9,72M€</span></div>
+              <div style="height:1px;background:var(--border);margin:.25rem 0;"></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:var(--text)">EBITDA 2026</span><span style="font-weight:600;color:var(--amber);">1,325M€</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:var(--text)">EBITDA 2027</span><span style="font-weight:600;color:var(--amber);">2,981M€</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:var(--text)">Marge nette 2026</span><span style="font-weight:600;">9,8%</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:var(--text)">Marge nette 2027</span><span style="font-weight:600;color:var(--teal);">17,5%</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:var(--text)">DSCR</span><span style="font-weight:600;">1,5x (2026) → 2,8x (2027)</span></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:var(--text)">Payback</span><span style="font-weight:600;">&lt; 2 ans</span></div>
+            </div>
+            <div style="height:1px;background:var(--border);margin:1rem 0;"></div>
+            <p style="font-size:.75rem;font-weight:700;color:var(--text2);margin-bottom:.4rem;">Besoin de financement</p>
+            <p style="font-size:.82rem;">Projet : 250k€. Apport : 200k€. Recherche : 50k€</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="flogo"><span class="c1">CROUSTI</span><span class="c2">COCO</span></div>
+    <p>© 2026 Crousti Coco · KF Burger Île-de-France · Tous droits réservés</p>
+    <p>Document confidentiel · Usage investisseurs</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

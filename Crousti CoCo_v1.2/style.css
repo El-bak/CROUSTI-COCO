@@ -1,0 +1,632 @@
+/* ============================================================
+   CROUSTI COCO — style.css
+   Fichier CSS unique pour tout le projet
+   Organisation :
+     0. Variables & Reset        → tous les fichiers
+     1. Composants globaux       → tous les fichiers
+     2. Navigation & Footer      → tous les fichiers
+     3. index.html               → page d'accueil
+     4. A_propos.html            → qui sommes-nous
+     5. Franchise.html           → la franchise
+     6. Modele_eco.html          → modèle économique
+     7. Contact.html             → contact
+     8. Animations & Responsive  → tous les fichiers
+   ============================================================ */
+
+
+/* ============================================================
+   0. VARIABLES & RESET  (tous les fichiers)
+   ============================================================ */
+:root {
+  --ink:     #0D0F14;
+  --ink2:    #161922;
+  --ink3:    #1E2230;
+  --ink4:    #252836;
+  --amber:   #FF8C00;
+  --amber2:  #FFB347;
+  --teal:    #00C9A7;
+  --border:  rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.13);
+  --text:    rgba(255,255,255,0.65);
+  --text2:   rgba(255,255,255,0.40);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html  { scroll-behavior: smooth; }
+body  { background: var(--ink); color: #fff; font-family: 'DM Sans', sans-serif; overflow-x: hidden; cursor: none; }
+img   { max-width: 100%; border-radius: 12px; display: block; }
+em    { font-style: normal; color: var(--amber); }
+
+
+/* ============================================================
+   1. COMPOSANTS GLOBAUX  (tous les fichiers)
+   ============================================================ */
+
+/* Curseur */
+.cursor      { width:10px; height:10px; background:var(--amber); border-radius:50%; position:fixed; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width .3s,height .3s,background .3s; }
+.cursor-ring { width:36px; height:36px; border:1.5px solid rgba(255,140,0,.45); border-radius:50%; position:fixed; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:width .3s,height .3s; }
+.cursor.grow      { width:6px; height:6px; background:var(--teal); }
+.cursor-ring.grow { width:52px; height:52px; border-color:rgba(0,201,167,.35); }
+
+/* Conteneur */
+.container { max-width: 1100px; margin: 0 auto; }
+
+/* Sections */
+.sec       { padding: 6rem 2rem; }
+.sec.dark2 { background: var(--ink2); }
+.sec.dark3 { background: var(--ink); }
+
+/* En-têtes de section */
+.sec-eyebrow {
+  display: inline-flex; align-items: center; gap: .6rem;
+  font-size: .68rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 1rem;
+}
+.sec-eyebrow::before, .sec-eyebrow::after { content:''; display:inline-block; width:18px; height:1px; background:var(--teal); }
+
+.sec-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800; letter-spacing: -.03em; line-height: 1.08;
+  margin-bottom: 1rem;
+}
+
+.sec-intro {
+  color: var(--text); line-height: 1.85; font-size: .95rem;
+  max-width: 640px; margin: 0 auto 3.5rem; text-align: center;
+}
+
+/* Cartes génériques */
+.card {
+  background: var(--ink3); border: 1px solid var(--border);
+  border-radius: 16px; padding: 1.5rem;
+  transition: transform .3s, border-color .3s;
+}
+.card:hover { transform: translateY(-5px); border-color: rgba(255,140,0,.3); }
+.card.teal:hover { border-color: rgba(0,201,167,.3); }
+
+/* Étiquette inline */
+.tag-pill {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(0,201,167,.08); border: 1px solid rgba(0,201,167,.2);
+  color: var(--teal); font-size: .7rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  padding: .4rem 1.1rem; border-radius: 100px;
+}
+
+/* Checkbox style Notion */
+.notion-check {
+  display: flex; align-items: flex-start; gap: .75rem;
+  background: var(--ink4); border: 1px solid var(--border2);
+  border-radius: 10px; padding: 1rem 1.25rem;
+}
+.notion-check::before {
+  content: ''; width:16px; height:16px; border:1.5px solid var(--border2);
+  border-radius: 4px; flex-shrink: 0; margin-top: 2px;
+}
+.notion-check p { font-size: .9rem; color: rgba(255,255,255,.75); line-height: 1.6; }
+
+/* Bouton point orange */
+.bullet-orange { color: var(--amber); font-size: .9rem; }
+.bullet-orange strong { font-weight: 700; }
+
+/* Grille 2 colonnes */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+
+/* Boutons */
+.btn-fill {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--amber); color: var(--ink);
+  padding: .9rem 2rem; font-family: 'DM Sans',sans-serif;
+  font-size: .85rem; font-weight: 700; border: none;
+  border-radius: 100px; cursor: pointer; text-decoration: none;
+  transition: transform .2s, background .2s, box-shadow .2s;
+}
+.btn-fill:hover { transform: translateY(-3px); background: var(--amber2); box-shadow: 0 12px 28px rgba(255,140,0,.28); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: transparent; color: #fff;
+  padding: .9rem 2rem; font-family: 'DM Sans',sans-serif;
+  font-size: .85rem; font-weight: 500;
+  border: 1px solid rgba(255,255,255,.18); border-radius: 100px;
+  cursor: pointer; text-decoration: none;
+  transition: transform .2s, border-color .2s, color .2s;
+}
+.btn-ghost:hover { transform: translateY(-3px); border-color: var(--teal); color: var(--teal); }
+
+/* Reveal scroll */
+.rv { opacity:0; transform:translateY(22px); transition:opacity .7s ease,transform .7s ease; }
+.rv.in { opacity:1; transform:translateY(0); }
+.d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s} .d4{transition-delay:.4s}
+
+
+/* ============================================================
+   2. NAVIGATION & FOOTER  (tous les fichiers)
+   ============================================================ */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:500;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.5rem 4rem;
+  transition: background .4s, padding .4s, box-shadow .4s;
+}
+nav.scrolled {
+  background: rgba(13,15,20,.96); backdrop-filter: blur(20px);
+  padding: 1rem 4rem; box-shadow: 0 1px 0 var(--border);
+}
+.nav-logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.4rem; letter-spacing:-.02em; text-decoration:none; line-height:1; }
+.nav-logo .c1 { color:var(--amber); }
+.nav-logo .c2 { color:var(--teal); }
+.nav-logo .sub { display:block; font-family:'DM Sans',sans-serif; font-size:.65rem; font-weight:400; letter-spacing:.1em; color:rgba(255,255,255,.3); margin-top:2px; }
+nav ul { display:flex; gap:.2rem; list-style:none; align-items:center; }
+nav ul a { color:rgba(255,255,255,.6); text-decoration:none; font-size:.77rem; font-weight:500; letter-spacing:.05em; text-transform:uppercase; padding:.5rem 1rem; border-radius:100px; transition:color .2s,background .2s; }
+nav ul a:hover { color:#fff; background:rgba(255,255,255,.06); }
+nav ul a.nav-active { color:var(--amber); background:rgba(255,140,0,.08); }
+.nav-cta { background:var(--amber)!important; color:var(--ink)!important; font-weight:700!important; }
+.nav-cta:hover { background:var(--amber2)!important; }
+.nav-cta.nav-active { background:var(--amber2)!important; }
+.menu-toggle { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; }
+.menu-toggle span { width:24px; height:2px; background:#fff; display:block; transition:.3s; }
+
+footer {
+  background: var(--ink2); border-top: 1px solid var(--border);
+  padding: 2rem 4rem; display:flex; align-items:center;
+  justify-content:space-between; flex-wrap:wrap; gap:.75rem;
+}
+.flogo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.15rem; letter-spacing:-.02em; }
+.flogo .c1 { color:var(--amber); }
+.flogo .c2 { color:var(--teal); }
+footer p { font-size:.7rem; color:rgba(255,255,255,.22); }
+
+
+/* ============================================================
+   3. index.html — PAGE ACCUEIL
+   ============================================================ */
+
+/* Hero wrapper */
+#page-home {
+  min-height: 100vh; display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  text-align:center; padding:6rem 2rem 4rem;
+  position:relative; overflow:hidden;
+}
+.hero-bg {
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 75%, rgba(0,201,167,.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 35% at 20% 20%, rgba(255,140,0,.07) 0%, transparent 50%);
+}
+.hero-grid {
+  position:absolute; inset:0;
+  background-image: linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse at center,black 20%,transparent 75%);
+}
+
+/* Badge "Franchise KF Burger" */
+.hero-pill {
+  display:inline-flex; align-items:center; gap:.6rem;
+  background:rgba(0,201,167,.1); border:1px solid rgba(0,201,167,.25);
+  color:var(--teal); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+  padding:.45rem 1.25rem; border-radius:100px; margin-bottom:2.5rem;
+  position:relative; z-index:1; animation:up .9s ease .1s both;
+}
+.pill-dot { width:6px; height:6px; border-radius:50%; background:var(--teal); animation:blink 2s infinite; }
+
+/* Nom CROUSTI COCO */
+.hero-name {
+  font-family:'Syne',sans-serif; font-weight:800;
+  font-size:clamp(5rem,14vw,13rem); line-height:.85; letter-spacing:-.04em;
+  position:relative; z-index:1; animation:up .9s ease .2s both;
+}
+.hero-name .l1 { display:block; color:#fff; }
+.hero-name .l2 { display:block; color:transparent; -webkit-text-stroke:1.5px var(--amber); }
+
+/* Tagline */
+.hero-tagline {
+  font-size:clamp(.78rem,1.4vw,.9rem); font-weight:400;
+  color:rgba(255,255,255,.4); letter-spacing:.22em; text-transform:uppercase;
+  margin-top:1.5rem; position:relative; z-index:1; animation:up .9s ease .3s both;
+}
+.hero-tagline b { color:var(--amber); font-weight:500; }
+
+/* 3 cartes sous le titre (3 associés / 9 restos / 2 ans) */
+.hero-cards {
+  display:flex; gap:1.5rem; margin-top:4rem; flex-wrap:wrap; justify-content:center;
+  position:relative; z-index:1; animation:up .9s ease .45s both;
+}
+.hero-card {
+  background:rgba(255,255,255,.03); border:1px solid var(--border);
+  border-radius:16px; overflow:hidden; width:200px;
+  transition:border-color .3s, transform .3s;
+}
+.hero-card:hover { border-color:rgba(255,140,0,.3); transform:translateY(-4px); }
+.hero-card img { width:100%; height:130px; object-fit:cover; border-radius:0; }
+.hero-card-label { padding:.75rem 1rem; font-size:.82rem; font-weight:600; color:rgba(255,255,255,.75); }
+
+/* KPIs strip */
+.hero-kpis {
+  display:flex; flex-wrap:wrap; margin-top:3rem;
+  border:1px solid var(--border); border-radius:18px; overflow:hidden;
+  position:relative; z-index:1; animation:up .9s ease .55s both;
+  backdrop-filter:blur(8px); background:rgba(255,255,255,.02);
+}
+.kpi { padding:1.3rem 2rem; text-align:center; border-right:1px solid var(--border); flex:1 0 100px; }
+.kpi:last-child { border-right:none; }
+.kv { font-family:'Syne',sans-serif; font-size:1.9rem; font-weight:800; color:var(--amber); line-height:1; }
+.kv.t { color:var(--teal); }
+.kl { font-size:.6rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.3); margin-top:.3rem; }
+
+/* Boutons CTA */
+.hero-actions {
+  display:flex; gap:1rem; margin-top:3rem; flex-wrap:wrap; justify-content:center;
+  position:relative; z-index:1; animation:up .9s ease .7s both;
+}
+
+/* Scroll hint */
+.scroll-hint {
+  position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:.5rem;
+  color:rgba(255,255,255,.3); font-size:.6rem; letter-spacing:.15em; text-transform:uppercase;
+  z-index:1; animation:up .9s ease .9s both;
+}
+.scroll-line { width:1px; height:48px; background:linear-gradient(to bottom,rgba(255,255,255,.3),transparent); animation:fall 2.2s ease-in-out infinite; }
+
+
+/* ============================================================
+   4. A_propos.html — QUI SOMMES-NOUS
+   ============================================================ */
+
+/* Section 1 : L'équipe — intro texte + images McD / KFC */
+.equipe-header { margin-bottom: 3rem; }
+.equipe-header .num { font-size:.78rem; font-weight:700; color:var(--amber); letter-spacing:.05em; margin-bottom:.5rem; }
+.equipe-header h2 { font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800; line-height:1.05; margin-bottom:.75rem; }
+.equipe-header .subtitle { font-size:1.05rem; color:var(--text); }
+
+.equipe-photos { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:1.5rem; }
+.equipe-photo-block img { width:100%; height:220px; object-fit:cover; border-radius:12px; margin-bottom:.85rem; }
+.equipe-photo-block h4 { font-size:.88rem; font-weight:700; margin-bottom:.4rem; }
+.equipe-photo-block p { font-size:.82rem; color:var(--text); line-height:1.7; }
+
+.equipe-highlight {
+  display:flex; align-items:flex-start; gap:.5rem;
+  font-size:.88rem; color:var(--amber); line-height:1.6;
+  margin-top:1.5rem; margin-bottom:3rem;
+}
+
+/* Section 2 : logos partenaires O'Tacos etc. */
+.partenaires-section { margin-bottom:3rem; }
+.partenaires-logos { display:flex; gap:1rem; margin-bottom:2rem; flex-wrap:wrap; }
+.partenaire-logo {
+  width:140px; height:90px; object-fit:cover;
+  border-radius:10px; border:1px solid var(--border);
+}
+.partenaires-text { font-size:.9rem; color:var(--text); margin-bottom:1.25rem; line-height:1.7; }
+.partenaires-text strong { color:#fff; }
+.partenaires-boxes { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.partenaire-box {
+  background:var(--ink3); border:1px solid var(--border2);
+  border-radius:10px; padding:1.1rem 1.4rem;
+  font-size:.95rem; font-weight:700;
+}
+
+/* Section 3 : Cette expérience garantit */
+.garanties-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-bottom:1.5rem; }
+.garantie-card {
+  background:var(--ink3); border:1px solid var(--border);
+  border-radius:14px; padding:1.5rem;
+}
+.garantie-icon {
+  width:44px; height:44px; border-radius:50%;
+  background:rgba(255,255,255,.06);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.1rem; margin-bottom:1rem;
+}
+.garantie-card h3 { font-size:.92rem; font-weight:700; line-height:1.4; }
+
+/* Section 4 : Points forts */
+.points-forts { margin-top:3rem; }
+.points-forts .eyebrow { font-size:.82rem; color:var(--amber); margin-bottom:1.5rem; }
+.points-forts-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.pf-card { }
+.pf-color { width:20px; height:20px; border-radius:4px; margin-bottom:.75rem; }
+.pf-card h3 { font-size:.95rem; font-weight:700; margin-bottom:.5rem; }
+.pf-card p { font-size:.82rem; color:var(--text); line-height:1.6; }
+
+/* Section 5 : Notre conviction */
+.conviction-section {
+  position:relative; border-radius:20px; overflow:hidden;
+  background:rgba(0,0,0,.5); margin-top:3rem; padding:3rem 2.5rem;
+}
+.conviction-bg {
+  position:absolute; inset:0; z-index:0;
+  background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7));
+}
+.conviction-content { position:relative; z-index:1; }
+.conviction-quote {
+  font-size:clamp(.9rem,2vw,1.05rem); color:rgba(255,255,255,.8);
+  line-height:1.75; margin-bottom:2.5rem; font-style:italic;
+}
+.conviction-pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+.cpillar .num { font-family:'Syne',sans-serif; font-size:2.5rem; font-weight:800; color:rgba(255,255,255,.15); }
+.cpillar h4 { font-size:.88rem; font-weight:700; margin:.3rem 0 .2rem; }
+.cpillar p { font-size:.78rem; color:var(--text); }
+
+
+/* ============================================================
+   5. Franchise.html — LA FRANCHISE
+   ============================================================ */
+
+/* Réseau : 18 BE / 3 FR + carte Belgique */
+.reseau-split { display:grid; grid-template-columns:1fr 1fr; gap:0; min-height:420px; margin-bottom:3rem; }
+.reseau-left { padding:3rem 2.5rem; }
+.reseau-big-num {
+  font-family:'Syne',sans-serif; font-size:clamp(4rem,8vw,7rem);
+  font-weight:800; color:#fff; line-height:1;
+}
+.reseau-label { font-size:.75rem; font-weight:700; letter-spacing:.08em; margin-bottom:.3rem; }
+.reseau-label .flag-badge {
+  display:inline-block; font-size:.6rem; font-weight:700;
+  background:rgba(255,255,255,.1); border-radius:4px;
+  padding:.15rem .4rem; margin-right:.4rem; letter-spacing:.08em;
+}
+.reseau-sub { font-size:.8rem; color:var(--text); margin-bottom:2.5rem; }
+.reseau-photos { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.5rem; }
+.reseau-photos img { width:100%; height:130px; object-fit:cover; border-radius:10px; }
+.reseau-photo-cap { font-size:.72rem; color:var(--text); margin-top:.4rem; }
+.reseau-map { background:var(--ink3); display:flex; align-items:center; justify-content:center; overflow:hidden; border-radius:0; }
+.reseau-map img { width:100%; height:100%; object-fit:cover; opacity:.85; }
+
+/* France expansion */
+.france-split { display:grid; grid-template-columns:1fr 1fr; gap:0; min-height:360px; margin-bottom:3rem; }
+.france-map { overflow:hidden; }
+.france-map img { width:100%; height:100%; object-fit:cover; opacity:.85; }
+.france-right { padding:2.5rem; display:flex; flex-direction:column; justify-content:center; gap:1.5rem; }
+.france-stat-big {
+  display:flex; align-items:center; gap:1rem;
+  font-size:.85rem; color:var(--text); border-left:3px solid var(--border2); padding-left:1rem;
+}
+.france-stat-big strong { color:#fff; font-size:1rem; }
+.france-arrow-item { display:flex; align-items:flex-start; gap:.75rem; }
+.france-arrow-item .arr { color:var(--text); font-size:1.1rem; margin-top:1px; }
+.france-arrow-item p { font-size:.88rem; color:rgba(255,255,255,.7); line-height:1.5; }
+.france-arrow-item p strong { color:#fff; }
+
+/* Executive summary / Vision IDF */
+.exec-summary { margin-bottom:3rem; }
+.exec-tag {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:rgba(255,255,255,.06); border:1px solid var(--border2);
+  font-size:.65rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  padding:.35rem .85rem; border-radius:6px; margin-bottom:1.5rem;
+}
+.exec-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start; }
+.exec-left { }
+.exec-timeline { margin:1.5rem 0; }
+.timeline-row { display:flex; align-items:center; gap:0; position:relative; margin-bottom:.5rem; }
+.tl-node {
+  width:32px; height:32px; border-radius:50%;
+  background:var(--ink4); border:1px solid var(--border2);
+  display:flex; align-items:center; justify-content:center;
+  font-size:.75rem; font-weight:700; flex-shrink:0; z-index:1;
+}
+.tl-line { flex:1; height:1px; background:var(--border2); }
+.tl-year-block { margin:0 1.5rem; text-align:center; }
+.tl-dot { width:12px; height:12px; border-radius:50%; margin:0 auto .4rem; }
+.tl-dot.green { background:#22c55e; }
+.tl-dot.blue  { background:#3b82f6; }
+.tl-year { font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:800; }
+.tl-desc { font-size:.72rem; color:var(--text); }
+.exec-right img { width:100%; border-radius:16px; }
+
+/* Vision chiffres */
+.vision-nums { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-bottom:2rem; }
+.vision-num-card { text-align:center; }
+.vnc-big { font-family:'Syne',sans-serif; font-size:3.5rem; font-weight:800; color:#fff; line-height:1; }
+.vnc-label { font-size:.75rem; font-weight:700; margin-top:.3rem; }
+.vnc-sub { font-size:.7rem; color:var(--text); margin-top:.1rem; }
+
+/* Phénomène KF Burger */
+.phenomene-section { margin-top:3rem; }
+.phenomene-text { font-size:.9rem; color:var(--text); margin-bottom:.5rem; }
+.phenomene-title { font-size:.95rem; font-weight:700; color:var(--amber); margin-bottom:1.25rem; }
+.phenomene-photos { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.phenomene-photos img { width:100%; height:190px; object-fit:cover; border-radius:10px; }
+
+
+/* ============================================================
+   6. Modele_eco.html — MODÈLE ÉCONOMIQUE
+   ============================================================ */
+
+/* Grandes métriques 90k / 1,08M / 14,5% */
+.big-metrics {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+  border:1px solid var(--border); border-radius:18px; overflow:hidden;
+  margin-bottom:1.5rem;
+}
+.big-metric { padding:2rem; text-align:center; border-right:1px solid var(--border); }
+.big-metric:last-child { border-right:none; }
+.bm-val { font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800; color:#fff; line-height:1; }
+.bm-label { font-size:.78rem; font-weight:600; color:rgba(255,255,255,.6); margin-top:.4rem; }
+.bm-sub   { font-size:.7rem; color:var(--text2); margin-top:.15rem; }
+
+/* Financement : Apport / Besoin total / Recherche */
+.funding-boxes {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+  border:1px solid var(--border); border-radius:14px; overflow:hidden;
+}
+.fb { padding:1.25rem 1.5rem; border-right:1px solid var(--border); }
+.fb:last-child { border-right:none; }
+.fb h4 { font-size:.78rem; font-weight:600; color:var(--text); margin-bottom:.4rem; }
+.fb .fval { font-size:1rem; font-weight:700; }
+
+/* CA mensuel + formule */
+.ca-row { display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:center; margin:2rem 0; }
+.ca-box { background:var(--ink3); border:1px solid var(--border2); border-radius:12px; padding:1.25rem 1.5rem; }
+.ca-box h4 { font-size:.75rem; color:var(--text); margin-bottom:.4rem; }
+.ca-box .ca-num { font-family:'Syne',sans-serif; font-size:2rem; font-weight:800; }
+.ca-formula { font-size:.82rem; color:var(--text); line-height:1.8; }
+
+/* 17,5% résultat net */
+.resultat-split { display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:center; margin:2rem 0; padding:2rem; background:var(--ink3); border:1px solid var(--border); border-radius:16px; }
+.resultat-big { font-family:'Syne',sans-serif; font-size:4rem; font-weight:800; color:#fff; }
+.resultat-label { font-size:.85rem; font-weight:600; color:rgba(255,255,255,.65); }
+.resultat-sub { font-size:.75rem; color:var(--text2); }
+.resultat-right .badge-item { display:flex; align-items:flex-start; gap:.6rem; margin-bottom:.75rem; }
+.resultat-right .badge-item .bi-emoji { font-size:1rem; }
+.resultat-right .badge-item p { font-size:.84rem; color:rgba(255,255,255,.7); line-height:1.5; }
+
+/* Grilles 2026 / 2027 */
+.year-grids { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin:2rem 0; }
+.year-grid-card { background:var(--ink3); border:1px solid var(--border); border-radius:14px; padding:1.5rem; }
+.year-grid-card .yg-emoji { font-size:1.5rem; margin-bottom:1rem; }
+.year-grid-card .yg-items { display:grid; grid-template-columns:1fr 1fr; gap:.6rem; }
+.yg-item { background:var(--ink4); border:1px solid var(--border); border-radius:8px; padding:.75rem; }
+.yg-item h5 { font-size:.7rem; color:var(--text); margin-bottom:.25rem; }
+.yg-item p { font-size:.82rem; font-weight:600; }
+.yg-item p .arrow { font-size:.75rem; }
+
+/* Tableau P&L complet */
+.pl-table-wrap { margin:2rem 0; overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:.84rem; }
+thead th { text-align:left; padding:.75rem 1rem; font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:var(--text2); border-bottom:1px solid var(--border2); }
+tbody td { padding:.65rem 1rem; border-bottom:1px solid rgba(255,255,255,.04); color:var(--text); }
+tbody td:first-child { color:var(--text2); }
+tbody td:not(:first-child) { color:#fff; font-weight:500; }
+tr.row-bold td { color:var(--amber)!important; font-weight:700!important; }
+tr.row-teal td { color:var(--teal)!important; font-weight:700!important; }
+.table-note { font-size:.75rem; color:var(--text2); margin-top:.75rem; line-height:1.6; padding:.75rem 1rem; background:var(--ink3); border-radius:8px; }
+
+/* Investisseur : objectif / ticket / proposition */
+.investor-wrap { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin:2rem 0; }
+.investor-card { background:var(--ink3); border:1px solid var(--border); border-radius:14px; padding:1.75rem; }
+.investor-card h4 { font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--amber); margin-bottom:.3rem; }
+.investor-card p { font-size:.95rem; font-weight:600; margin-bottom:1rem; }
+.investor-pros { list-style:none; }
+.investor-pros li { font-size:.84rem; color:var(--text); padding:.25rem 0; }
+.investor-pros li::before { content:'• '; color:var(--amber); }
+
+/* ROI */
+.roi-banner {
+  display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;
+  background:rgba(255,140,0,.07); border:1px solid rgba(255,140,0,.25);
+  border-radius:14px; padding:1.5rem 2rem; margin:1.5rem 0;
+}
+.roi-big { font-family:'Syne',sans-serif; font-size:1.3rem; font-weight:800; color:var(--amber); white-space:nowrap; }
+.roi-badge { display:flex; align-items:center; gap:.75rem; }
+.roi-badge .notion-check-inline {
+  display:flex; align-items:center; gap:.5rem;
+  background:var(--ink4); border:1px solid var(--border2); border-radius:8px; padding:.6rem 1rem;
+  font-size:.88rem; font-weight:700;
+}
+
+/* Financement sources */
+.fin-sources { display:flex; flex-direction:column; gap:1rem; margin:2rem 0; }
+.fin-source { display:flex; align-items:flex-start; gap:1.25rem; }
+.fin-source-num {
+  width:36px; height:36px; border-radius:8px; flex-shrink:0;
+  background:var(--ink4); border:1px solid var(--border2);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Syne',sans-serif; font-size:.85rem; font-weight:800;
+}
+.fin-source-text h4 { font-size:.9rem; font-weight:700; margin-bottom:.2rem; }
+.fin-source-text p { font-size:.8rem; color:var(--text); }
+
+/* Scénarios de sortie */
+.sorties-grid { display:flex; flex-direction:column; gap:1rem; }
+.sortie-card { display:flex; align-items:flex-start; gap:1rem; background:var(--ink3); border:1px solid var(--border); border-radius:14px; padding:1.25rem; }
+.sortie-icon { width:42px; height:42px; border-radius:50%; background:rgba(255,255,255,.06); display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+.sortie-card h4 { font-size:.9rem; font-weight:700; margin-bottom:.2rem; }
+.sortie-card p { font-size:.8rem; color:var(--text); }
+
+
+/* ============================================================
+   7. Contact.html — CONTACT
+   ============================================================ */
+.contact-wrap { display:grid; grid-template-columns:1fr 1.35fr; gap:4rem; align-items:start; }
+
+.contact-info h2 { font-family:'Syne',sans-serif; font-size:2.2rem; font-weight:800; line-height:1.1; margin-bottom:1.25rem; }
+.contact-info .cp { color:var(--text); line-height:1.85; font-size:.93rem; margin-bottom:2rem; }
+
+.contact-details { display:flex; flex-direction:column; gap:.85rem; margin-bottom:2rem; }
+.cd { display:flex; align-items:center; gap:.9rem; }
+.cd-ic { width:40px; height:40px; border-radius:12px; background:rgba(255,140,0,.08); border:1px solid rgba(255,140,0,.2); display:flex; align-items:center; justify-content:center; font-size:.95rem; flex-shrink:0; }
+.cd-info strong { display:block; font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text2); margin-bottom:.15rem; }
+.cd-info span { font-size:.9rem; font-weight:500; }
+
+.ticket-card { background:linear-gradient(135deg,rgba(0,201,167,.08),rgba(0,229,192,.03)); border:1px solid rgba(0,201,167,.2); border-radius:14px; padding:1.4rem; }
+.tc-lbl { font-size:.63rem; letter-spacing:.15em; text-transform:uppercase; color:var(--teal); margin-bottom:.4rem; }
+.tc-val { font-family:'Syne',sans-serif; font-size:1.9rem; font-weight:800; }
+.tc-desc { font-size:.76rem; color:var(--text2); margin-top:.4rem; line-height:1.6; }
+
+/* Formulaire */
+.form-wrap { background:var(--ink3); border:1px solid var(--border); border-radius:24px; padding:2.5rem; }
+.form-wrap h3 { font-family:'Syne',sans-serif; font-size:1.4rem; font-weight:800; margin-bottom:.4rem; }
+.form-sub { font-size:.8rem; color:var(--text2); margin-bottom:2rem; }
+.frow { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.fg { margin-bottom:1.15rem; }
+.fg label { display:block; font-size:.67rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin-bottom:.45rem; }
+.fg input, .fg textarea, .fg select {
+  width:100%; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1);
+  border-radius:12px; padding:.82rem 1.1rem; color:#fff;
+  font-family:'DM Sans',sans-serif; font-size:.88rem; outline:none;
+  transition:border-color .2s,background .2s; -webkit-appearance:none;
+}
+.fg input:focus, .fg textarea:focus, .fg select:focus { border-color:var(--amber); background:rgba(255,140,0,.04); }
+.fg textarea { resize:vertical; min-height:130px; }
+.fg select option { background:var(--ink2); }
+.fsub {
+  width:100%; background:var(--amber); color:var(--ink); padding:1rem;
+  font-family:'Syne',sans-serif; font-size:.9rem; font-weight:800; letter-spacing:.03em;
+  border:none; border-radius:12px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:.55rem;
+  transition:background .2s,transform .2s,box-shadow .2s;
+}
+.fsub:hover { background:var(--amber2); transform:translateY(-2px); box-shadow:0 12px 28px rgba(255,140,0,.28); }
+.fsub:disabled { opacity:.6; cursor:not-allowed; transform:none; box-shadow:none; }
+.form-ok { display:none; text-align:center; padding:2rem; background:rgba(0,201,167,.07); border:1px solid rgba(0,201,167,.22); border-radius:16px; margin-top:1rem; }
+.form-ok h4 { font-family:'Syne',sans-serif; font-size:1.2rem; color:var(--teal); margin-bottom:.5rem; }
+.form-ok p { font-size:.83rem; color:var(--text); }
+.fnote { font-size:.7rem; color:var(--text2); text-align:center; margin-top:1rem; line-height:1.6; }
+
+
+/* ============================================================
+   8. ANIMATIONS & RESPONSIVE  (tous les fichiers)
+   ============================================================ */
+@keyframes up   { from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:translateY(0)} }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+@keyframes fall  { 0%{opacity:.5;transform:scaleY(0);transform-origin:top} 60%{opacity:1;transform:scaleY(1)} 100%{opacity:0;transform:translateY(60px)} }
+
+@media (max-width: 900px) {
+  nav { padding:1rem 1.5rem; }
+  nav.scrolled { padding:.75rem 1.5rem; }
+  nav ul { display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; background:rgba(13,15,20,.98); backdrop-filter:blur(20px); padding:1rem; border-bottom:1px solid var(--border); }
+  nav ul.open { display:flex; }
+  .menu-toggle { display:flex; }
+
+  /* Grilles → 1 colonne */
+  .grid-2, .grid-3,
+  .equipe-photos, .partenaires-boxes,
+  .garanties-grid, .points-forts-grid, .conviction-pillars,
+  .reseau-split, .france-split, .exec-grid,
+  .vision-nums, .year-grids, .investor-wrap,
+  .contact-wrap, .frow { grid-template-columns:1fr; }
+
+  .big-metrics, .funding-boxes { grid-template-columns:1fr; }
+  .big-metric, .fb { border-right:none; border-bottom:1px solid var(--border); }
+  .big-metric:last-child, .fb:last-child { border-bottom:none; }
+
+  .hero-kpis { flex-direction:column; }
+  .kpi { border-right:none; border-bottom:1px solid var(--border); }
+  .kpi:last-child { border-bottom:none; }
+
+  .phenomene-photos { grid-template-columns:1fr; }
+  .partenaires-logos { flex-wrap:wrap; }
+  .hero-cards { gap:1rem; }
+  .hero-card { width:160px; }
+
+  footer { padding:1.5rem; flex-direction:column; align-items:flex-start; }
+  body { cursor:auto; }
+  .cursor, .cursor-ring { display:none; }
+}
