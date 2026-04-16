@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crousti Coco — Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="cursor" id="c"></div>
+  <div class="cursor-ring" id="cr"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">
+      <span><span class="c1">CROUSTI</span><span class="c2">COCO</span></span>
+      <span class="sub">KF Burger · Île-de-France · Franchise</span>
+    </a>
+    <ul id="nl">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="A_propos.html">Qui sommes-nous ?</a></li>
+      <li><a href="Franchise.html">La franchise</a></li>
+      <li><a href="Modele_eco.html">Modèle éco.</a></li>
+      <li><a href="Contact.html" class="nav-cta nav-active">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="mt"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="sec dark3" style="padding-top:8rem;">
+    <div class="container">
+
+      <div style="text-align:center;margin-bottom:4rem;">
+        <div class="sec-eyebrow rv">Contact</div>
+        <h2 class="sec-title rv">Rejoignez <em>l'aventure</em></h2>
+      </div>
+
+      <div class="contact-wrap">
+
+        <!-- Infos -->
+        <div class="rv">
+          <div class="contact-info">
+            <h2>Prenez contact<br>avec <em>Saïd</em></h2>
+            <p class="cp">Vous êtes investisseur, partenaire ou simplement curieux de notre projet ? Envoyez votre message — Saïd le reçoit directement par email et vous répond rapidement.</p>
+          </div>
+
+          <div class="contact-details">
+            <div class="cd">
+              <div class="cd-ic">👤</div>
+              <div class="cd-info"><strong>Contact</strong><span>Saïd CHOUDJAY</span></div>
+            </div>
+            <div class="cd">
+              <div class="cd-ic">📞</div>
+              <div class="cd-info"><strong>Téléphone</strong><span>+33 7 54 87 37 44</span></div>
+            </div>
+            <div class="cd">
+              <div class="cd-ic">✉️</div>
+              <div class="cd-info"><strong>Email</strong><span>said.choudjay@crousticoco.com</span></div>
+            </div>
+          </div>
+
+          <div class="ticket-card">
+            <div class="tc-lbl">Ticket investisseur</div>
+            <div class="tc-val">25 000€ → 50 000€</div>
+            <div class="tc-desc">Participation minoritaire · 1–2 investisseurs · ROI estimé &lt; 2 ans</div>
+          </div>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="rv d2">
+          <div class="form-wrap">
+            <h3>Envoyer un message</h3>
+            <p class="form-sub">Saïd reçoit votre message directement par email — réponse sous 24–48h.</p>
+            <form id="cForm">
+              <div class="frow">
+                <div class="fg"><label>Prénom *</label><input type="text" id="fp" placeholder="Jean" required></div>
+                <div class="fg"><label>Nom *</label><input type="text" id="fn" placeholder="Dupont" required></div>
+              </div>
+              <div class="fg"><label>Email *</label><input type="email" id="fe" placeholder="jean.dupont@email.com" required></div>
+              <div class="fg"><label>Téléphone</label><input type="tel" id="ft" placeholder="+33 6 00 00 00 00"></div>
+              <div class="fg">
+                <label>Objet *</label>
+                <select id="fs" required>
+                  <option value="">Choisir un objet...</option>
+                  <option>Demande d'investissement</option>
+                  <option>Partenariat</option>
+                  <option>Information générale</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="fg"><label>Message *</label><textarea id="fm" placeholder="Bonjour, je suis intéressé par votre projet KF Burger en Île-de-France..." required></textarea></div>
+              <button type="submit" class="fsub" id="sb">
+                <span id="st">Envoyer le message</span>
+                <span id="si">→</span>
+              </button>
+            </form>
+            <div class="form-ok" id="fok">
+              <h4>✓ Message envoyé !</h4>
+              <p>Saïd a bien reçu votre message et vous répondra dans les plus brefs délais.</p>
+            </div>
+            <p class="fnote">Votre message est transmis directement à Saïd CHOUDJAY par email sécurisé.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="flogo"><span class="c1">CROUSTI</span><span class="c2">COCO</span></div>
+    <p>© 2026 Crousti Coco · KF Burger Île-de-France · Tous droits réservés</p>
+    <p>Document confidentiel · Usage investisseurs</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
