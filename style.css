@@ -484,8 +484,8 @@ footer p { font-size:.7rem; color:rgba(255,255,255,.22); }
 .year-grid-card .yg-emoji { font-size:1.5rem; margin-bottom:1rem; }
 .year-grid-card .yg-items { display:grid; grid-template-columns:1fr 1fr; gap:.6rem; }
 .yg-item { background:var(--ink4); border:1px solid var(--border); border-radius:8px; padding:.75rem; }
-.yg-item h5 { font-size:.7rem; color:var(--text); margin-bottom:.25rem; }
-.yg-item p { font-size:.82rem; font-weight:600; }
+.yg-item h5 { font-size:.85rem; color:rgba(255,255,255,.7); margin-bottom:.25rem; }
+.yg-item p  { font-size:.95rem; font-weight:600; }
 .yg-item p .arrow { font-size:.75rem; }
 
 /* Tableau P&L complet */
