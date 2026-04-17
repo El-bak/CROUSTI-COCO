@@ -449,8 +449,8 @@ footer p { font-size:.7rem; color:rgba(255,255,255,.22); }
 .big-metric { padding:2rem; text-align:center; border-right:1px solid var(--border); }
 .big-metric:last-child { border-right:none; }
 .bm-val { font-family:'Syne',sans-serif; font-size:clamp(2rem,4vw,3rem); font-weight:800; color:#fff; line-height:1; }
-.bm-label { font-size:.78rem; font-weight:600; color:rgba(255,255,255,.6); margin-top:.4rem; }
-.bm-sub   { font-size:.7rem; color:var(--text2); margin-top:.15rem; }
+.bm-label { font-size:1rem; font-weight:600; color:rgba(255,255,255,.8); margin-top:.4rem; }
+.bm-sub   { font-size:.9rem; color:rgba(255,255,255,.6); margin-top:.15rem; }
 
 /* Financement : Apport / Besoin total / Recherche */
 .funding-boxes {
