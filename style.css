@@ -160,7 +160,7 @@ nav.scrolled {
 .nav-logo .c2 { color:var(--teal); }
 .nav-logo .sub { display:block; font-family:'DM Sans',sans-serif; font-size:.65rem; font-weight:400; letter-spacing:.1em; color:rgba(255,255,255,.3); margin-top:2px; }
 nav ul { display:flex; gap:.2rem; list-style:none; align-items:center; }
-nav ul a { color:rgba(255,255,255,.6); text-decoration:none; font-size:.77rem; font-weight:500; letter-spacing:.05em; text-transform:uppercase; padding:.5rem 1rem; border-radius:100px; transition:color .2s,background .2s; }
+nav ul a { color:rgba(255,255,255,.6); text-decoration:none; font-size:.9rem; font-weight:500; letter-spacing:.05em; text-transform:uppercase; padding:.5rem 1rem; border-radius:100px; transition:color .2s,background .2s; }
 nav ul a:hover { color:#fff; background:rgba(255,255,255,.06); }
 nav ul a.nav-active { color:var(--amber); background:rgba(255,140,0,.08); }
 .nav-cta { background:var(--amber)!important; color:var(--ink)!important; font-weight:700!important; }
@@ -256,7 +256,7 @@ footer p { font-size:.7rem; color:rgba(255,255,255,.22); }
 .kpi:last-child { border-right:none; }
 .kv { font-family:'Syne',sans-serif; font-size:1.9rem; font-weight:800; color:var(--amber); line-height:1; }
 .kv.t { color:var(--teal); }
-.kl { font-size:.6rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.3); margin-top:.3rem; }
+.kl { font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.3); margin-top:.3rem; }
 
 /* Boutons CTA */
 .hero-actions {
@@ -286,8 +286,8 @@ footer p { font-size:.7rem; color:rgba(255,255,255,.22); }
 
 .equipe-photos { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:1.5rem; }
 .equipe-photo-block img { width:100%; height:220px; object-fit:cover; border-radius:12px; margin-bottom:.85rem; }
-.equipe-photo-block h4 { font-size:.88rem; font-weight:700; margin-bottom:.4rem; }
-.equipe-photo-block p { font-size:.82rem; color:var(--text); line-height:1.7; }
+.equipe-photo-block h4 { font-size:.1rem; font-weight:700; margin-bottom:.4rem; }
+.equipe-photo-block p { font-size:.95rem; color:var(--text); line-height:1.7; }
 
 .equipe-highlight {
   display:flex; align-items:flex-start; gap:.5rem;
@@ -323,7 +323,7 @@ footer p { font-size:.7rem; color:rgba(255,255,255,.22); }
   display:flex; align-items:center; justify-content:center;
   font-size:1.1rem; margin-bottom:1rem;
 }
-.garantie-card h3 { font-size:.92rem; font-weight:700; line-height:1.4; }
+.garantie-card h3 { font-size:1.05rem; font-weight:700; line-height:1.4; }
 
 /* Section 4 : Points forts */
 .points-forts { margin-top:3rem; }
@@ -332,7 +332,7 @@ footer p { font-size:.7rem; color:rgba(255,255,255,.22); }
 .pf-card { }
 .pf-color { width:20px; height:20px; border-radius:4px; margin-bottom:.75rem; }
 .pf-card h3 { font-size:.95rem; font-weight:700; margin-bottom:.5rem; }
-.pf-card p { font-size:.82rem; color:var(--text); line-height:1.6; }
+.pf-card p { font-size:.95rem; color:var(--text); line-height:1.6; }
 
 /* Section 5 : Notre conviction */
 .conviction-section {
@@ -490,8 +490,8 @@ footer p { font-size:.7rem; color:rgba(255,255,255,.22); }
 
 /* Tableau P&L complet */
 .pl-table-wrap { margin:2rem 0; overflow-x:auto; }
-table { width:100%; border-collapse:collapse; font-size:.84rem; }
-thead th { text-align:left; padding:.75rem 1rem; font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:var(--text2); border-bottom:1px solid var(--border2); }
+table { width:100%; border-collapse:collapse; font-size:.1rem; }
+thead th { text-align:left; padding:.75rem 1rem; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; color:var(--text2); border-bottom:1px solid var(--border2); }
 tbody td { padding:.65rem 1rem; border-bottom:1px solid rgba(255,255,255,.04); color:var(--text); }
 tbody td:first-child { color:var(--text2); }
 tbody td:not(:first-child) { color:#fff; font-weight:500; }
@@ -538,8 +538,8 @@ tr.row-teal td { color:var(--teal)!important; font-weight:700!important; }
 .sorties-grid { display:flex; flex-direction:column; gap:1rem; }
 .sortie-card { display:flex; align-items:flex-start; gap:1rem; background:var(--ink3); border:1px solid var(--border); border-radius:14px; padding:1.25rem; }
 .sortie-icon { width:42px; height:42px; border-radius:50%; background:rgba(255,255,255,.06); display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
-.sortie-card h4 { font-size:.9rem; font-weight:700; margin-bottom:.2rem; }
-.sortie-card p { font-size:.8rem; color:var(--text); }
+.sortie-card h4 { font-size:.1.05rem; font-weight:700; margin-bottom:.2rem; }
+.sortie-card p { font-size:.95rem; color:var(--text); }
 
 
 /* ============================================================
